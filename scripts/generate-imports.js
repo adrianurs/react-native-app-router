@@ -60,7 +60,9 @@ function generateStatementsForRoute(route) {
   const imports = [];
   const exports = [];
 
-  const normalizedComponentName = capitalize(route.segment).replaceAll("-", "");
+  const normalizedComponentName = capitalize(
+    route.segment.replaceAll("[", "").replaceAll("]", ""),
+  ).replaceAll("-", "");
   if (route.layoutFile) {
     const component = `${normalizedComponentName}Layout`;
 
