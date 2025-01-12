@@ -7,5 +7,5 @@
     "resolveJsonModule": true
   },
   "include": ["/**/*"],
-  "exclude": ["/dist/*", "/bin/*"]
+  "exclude": ["/scripts/*", "/bin/*"]
 }
