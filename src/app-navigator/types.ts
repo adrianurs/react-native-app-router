@@ -17,6 +17,7 @@ export interface Route {
   layoutFile: ImportKey | null;
   screenFile: ImportKey;
   children: Route[];
+  route: string;
 }
 
 export type LayoutChildren = (layoutParams: any) => ReactNode;

@@ -89,11 +89,11 @@ function createRouteTree(dir) {
  * Recursively generate code for the route tree. We'll produce a
  * JavaScript object that has { segment, layoutFile, screenFile, children: [] }.
  */
-function generateRouteCode(node) {
+function generateRouteCode(node, parentNode) {
   // Children first
   let childrenCode = "";
   if (node.children && node.children.length > 0) {
-    childrenCode = `[${node.children.map(generateRouteCode).join(", ")}]`;
+    childrenCode = `[${node.children.map((child) => generateRouteCode(child, node)).join(", ")}]`;
   } else {
     childrenCode = "[]";
   }
@@ -110,6 +110,7 @@ function generateRouteCode(node) {
     segment: '${node.segment}',
     layoutFile: ${layoutPath},
     screenFile: ${screenPath},
-    children: ${childrenCode}
+    children: ${childrenCode},
+    route: ${parentNode?.route ?? ""}/${node.segment}
   }`;
 }

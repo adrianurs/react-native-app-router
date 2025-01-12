@@ -17,7 +17,7 @@ export const getRenderer: GetRenderer = function ({ rootNode, componentsMap }) {
     // If node has layoutFile, let's treat this as a "Layout"
     // We can create a new stack or nested navigator
     if (node.layoutFile) {
-      // Lazy load the layout component using require or dynamic import
+      // TODO: Lazy load the layout component using require or dynamic import
       const LayoutComponent = componentsMap[node.layoutFile] as FC<{
         children: LayoutChildren;
       }>;
