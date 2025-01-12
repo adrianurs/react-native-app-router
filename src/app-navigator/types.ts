@@ -21,12 +21,9 @@ export interface Route {
 
 export type LayoutChildren = (layoutParams: any) => ReactNode;
 
+const navigatorsGenerators = [createStackNavigator, createNativeStackNavigator, createBottomTabNavigator, createDrawerNavigator, createMaterialTopTabNavigator]
 export type Navigator =
-    ReturnType<typeof createStackNavigator>
-    | ReturnType<typeof createNativeStackNavigator>
-    | ReturnType<typeof createBottomTabNavigator>
-    | ReturnType<typeof createDrawerNavigator>
-    | ReturnType<typeof createMaterialTopTabNavigator>;
+    ReturnType<typeof navigatorsGenerators[number]>
 
 type Renderer = () => ReactNode;
 
