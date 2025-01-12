@@ -4,14 +4,9 @@
   "description": "A lightweight file based router built for React Native",
   "main": "dist/index.js",
   "types": "index.d.ts",
-  "bin": {
-    "react-native-app-router": "bin/dev.js"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "prepare": "npm run build"
-  },
+  "author": "Urs Adrian",
+  "license": "ISC",
+  "url": "https://github.com/adrianurs/react-native-app-router",
   "keywords": [
     "react-native",
     "navigation",
@@ -19,8 +14,14 @@
     "app-router",
     "file-based"
   ],
-  "author": "Urs Adrian",
-  "license": "ISC",
+  "bin": {
+    "react-native-app-router": "bin/dev.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepare": "husky"
+  },
   "browser": {
     "child_process": false,
     "fs": false,
@@ -49,9 +50,14 @@
     "eslint-plugin-react": "^7.37.3",
     "execa": "^9.5.2",
     "globals": "^15.14.0",
+    "husky": "^9.1.7",
     "jest": "^29.7.0",
+    "lint-staged": "^15.3.0",
     "prettier": "3.4.2",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.19.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
