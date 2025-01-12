@@ -1,7 +1,7 @@
-const fs = require('fs/promises');
+const fs = require("fs/promises");
 
 async function generateFile(path, content) {
-    return fs.writeFile(path, content, 'utf-8');
+  return fs.writeFile(path, content, "utf-8");
 }
 
-module.exports = {generateFile};
+module.exports = { generateFile };

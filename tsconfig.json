@@ -6,11 +6,6 @@
     "outDir": "dist",
     "resolveJsonModule": true
   },
-  "include": [
-    "/**/*"
-  ],
-  "exclude": [
-    "/dist/*",
-    "/bin/*"
-  ]
+  "include": ["/**/*"],
+  "exclude": ["/dist/*", "/bin/*"]
 }

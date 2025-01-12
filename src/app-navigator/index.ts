@@ -1,2 +1,2 @@
-export {AppNavigator} from './app-navigator';
-export * from './types';
+export { AppNavigator } from "./app-navigator";
+export * from "./types";

@@ -1,3 +1,3 @@
-import {ReactNode} from "react";
+import { ReactNode } from "react";
 
-export function AppNavigator (): ReactNode;
+export function AppNavigator(): ReactNode;

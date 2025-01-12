@@ -1,2 +1,2 @@
-const importsMap = require('./imports.tsx');
+const importsMap = require("./imports.tsx");
 export {};
