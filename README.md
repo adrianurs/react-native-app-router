@@ -34,3 +34,78 @@ Update your `package.json` start script:
 ```
 
 Ready to go!
+
+## Some documentation
+
+### Required structure
+
+In order for the package to be functional there is a defined structure of the files that needs to be respected. This section will help you understand how to accomplish the _Nirvana_ in your life.
+
+As mentioned, it uses the file structure for the declaration of the routes and components. First of all, at top level we expect a `src` folder, it doesn't relate to routing but please start using it if you aren't. Then we need a folder called `app`, this will be our root.
+
+Currently there are two types of files that can be inserted inside a folder, `layout` or `screen`. For each folder existent in app a route will be created, the route will take the name of the folder as key.
+
+The directories besides the files mentioned can contain other directory, those will be handled as children routes.
+
+Pretty simple, no? Below you have also a visual representation of it, just in case.
+
+```bash
+.
+├── ...
+├── /src
+│   ├── /app
+│   │   ├── layout.jsx
+│   │   ├── screen.jsx
+│   │   ├── /home
+│   │   │    ├── screen.jsx
+└── ...
+```
+
+### Layout
+
+The scope of layout is to allow developers implementing as they desire a specific navigator with its layout.
+
+```bash
+const Stack = createStackNavigator();
+
+function Layout({children}: { children: any }) {
+  return (
+    <View style={{flex: 1}}>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        {children({Navigator: Stack})}
+      </Stack.Navigator>
+    </View>
+  )
+}
+
+export default Layout;
+```
+
+What is required there is the creation of the navigator and the sharing of that with the children, as shown above.
+
+Worth mentioning that the _Layout_ component is not required for every route, only when a new navigator is needed.
+
+### Screen
+
+And this, is the component thath should be impersonated by the main component on a specific route. It is required for every route declared in the project.
+
+```bash
+function App(): React.JSX.Element {
+  const isDarkMode = useColorScheme() === 'dark';
+  const backgroundStyle = {
+    backgroundColor: isDarkMode ? "#000" : "#567",
+    flex: 1
+  };
+
+  return (
+    <SafeAreaView style={backgroundStyle}>
+      <Text style={{fontSize:50, color: "black"}}>App</Text>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+});
+
+export default App;
+```
