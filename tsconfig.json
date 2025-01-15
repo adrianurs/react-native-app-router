@@ -1,7 +1,6 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "allowJs": false,
     "allowImportingTsExtensions": false,
     "noEmit": false,
     "outDir": "dist",
