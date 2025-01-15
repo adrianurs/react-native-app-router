@@ -111,6 +111,6 @@ function generateRouteCode(node, parentNode) {
     layoutFile: ${layoutPath},
     screenFile: ${screenPath},
     children: ${childrenCode},
-    route: ${parentNode?.route ?? ""}/${node.segment}
+    route: "${parentNode?.route ?? ""}/${node.segment}"
   }`;
 }
