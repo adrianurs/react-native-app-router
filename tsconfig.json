@@ -1,11 +1,12 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
+    "allowJs": false,
     "allowImportingTsExtensions": false,
     "noEmit": false,
     "outDir": "dist",
     "resolveJsonModule": true
   },
   "include": ["/**/*"],
-  "exclude": ["./scripts/*", "./bin/*"]
+  "exclude": ["./scripts/*", "./bin/*", "./dist/**/*"]
 }
