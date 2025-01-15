@@ -37,6 +37,23 @@ Ready to go!
 
 ## Some documentation
 
+### Use
+
+For the use of the router, is needed the import of "AppNavigator" in the root index file and used as shown below.
+
+```bash
+import {AppRegistry, View} from 'react-native';
+import {AppNavigator} from 'react-native-app-router';
+import {name as appName} from './app.json';
+
+function App() {
+console.log("App")
+return <AppNavigator />;
+}
+
+AppRegistry.registerComponent(appName, () => App);
+```
+
 ### Required structure
 
 In order for the package to be functional there is a defined structure of the files that needs to be respected. This section will help you understand how to accomplish the _Nirvana_ in your life.
@@ -87,7 +104,9 @@ Worth mentioning that the _Layout_ component is not required for every route, on
 
 ### Screen
 
-And this, is the component thath should be impersonated by the main component on a specific route. It is required for every route declared in the project.
+This will be the component rendered on the route created by the folder in which the file is found. It is required for every route declared in the project.
+
+In the example below you can see the 'App' main component.
 
 ```bash
 function App(): React.JSX.Element {
