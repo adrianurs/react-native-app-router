@@ -1,6 +1,6 @@
 {
   "name": "react-native-app-router",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "A lightweight file based router built for React Native",
   "main": "dist/src/index.js",
   "types": "index.d.ts",
