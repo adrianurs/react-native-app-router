@@ -15,6 +15,18 @@ A lightweight and flexible routing solution for React Native applications using 
 
 ## Installation
 
+(In progress: removal of the deps) Install the dependencies via npm or yarn:
+
+```bash
+npm i react react-native react-native-gesture-handler react-native-safe-area-context react-native-screens @react-navigation/bottom-tabs @react-navigation/drawer @react-navigation/material-top-tabs @react-navigation/native @react-navigation/native-stack @react-navigation/stack
+```
+
+For ios, run the following:
+
+```bash
+cd ios && pod install
+```
+
 Install the package via npm or yarn:
 
 ```bash
@@ -47,8 +59,7 @@ import {AppNavigator} from 'react-native-app-router';
 import {name as appName} from './app.json';
 
 function App() {
-console.log("App")
-return <AppNavigator />;
+  return <AppNavigator />;
 }
 
 AppRegistry.registerComponent(appName, () => App);
@@ -106,7 +117,7 @@ Worth mentioning that the _Layout_ component is not required for every route, on
 
 This will be the component rendered on the route created by the folder in which the file is found. It is required for every route declared in the project.
 
-In the example below you can see the 'App' main component.
+In the example below you can see the 'App' main component (this would be the component in `app/screen.tsx').
 
 ```bash
 function App(): React.JSX.Element {

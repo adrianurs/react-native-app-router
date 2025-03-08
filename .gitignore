@@ -9,6 +9,8 @@ node_modules
 
 .vscode-test
 .idea
+.idea/
+.DS_Store
 
 .yarn/cache
 .yarn/unplugged
