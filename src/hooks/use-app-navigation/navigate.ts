@@ -5,7 +5,7 @@ import { getAppRoutesList } from "../../routes";
 export function navigate(this: any, route: string, options: any) {
   const genericRoute = getGenericForRoute(
     route,
-    getAppRoutesList().map((route) => route.slice(1)),
+    getAppRoutesList().map((route) => route.slice(1)), // removing the first '/'
   );
 
   if (!genericRoute) {

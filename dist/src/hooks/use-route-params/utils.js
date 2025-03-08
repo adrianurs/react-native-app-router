@@ -1,4 +1,4 @@
-const dynamicRoutePartRegex = new RegExp("/^\[.*\]$");
+const dynamicRoutePartRegex = new RegExp(/\[(.*?)\]/);
 export function getParamKeyAndPositionMap(genericRoute) {
   const splittedGenericRoute = genericRoute.split("/") ?? [];
   const paramKeyAndPositionMap = new Map();
