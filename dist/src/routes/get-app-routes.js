@@ -1,5 +1,4 @@
-import { APP_ROUTES_PATH } from "../locations";
-const appRoutes = require(APP_ROUTES_PATH);
+import appRoutes from "../../output/app-routes";
 export function getAppRoutes() {
   return appRoutes ?? {};
 }

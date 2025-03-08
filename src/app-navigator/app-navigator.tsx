@@ -2,10 +2,9 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 
 import { getRenderer } from "./render";
-import { APP_ROUTES_PATH } from "../locations";
 
-const importsMap = require("./output/imports");
-const appRoutes = require(APP_ROUTES_PATH);
+import importsMap from "../../output/imports";
+import appRoutes from "../../output/app-routes";
 
 const render = getRenderer({
   rootNode: appRoutes,
