@@ -16,7 +16,7 @@ function generateImports() {
   const generated = generateStatements(appRoutes);
 
   for (const importStatement of generated.imports) {
-    fileContent = fileContent.concat(`${importStatement}\n`);
+    fileContent = fileContent.concat(`\n${importStatement}\n`);
   }
 
   fileContent = fileContent.concat("\n\nexport default {\n");
