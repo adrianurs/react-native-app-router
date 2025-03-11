@@ -1,6 +1,15 @@
 import React from "react";
+import DefaultLayout from "./default-layout";
 export const getRenderer = function ({ rootNode, componentsMap }) {
-  return () => renderNode(rootNode, null);
+  return () => renderRoot(rootNode);
+  function renderRoot(rootNode) {
+    if (rootNode.layoutFile) return renderNode(rootNode, null);
+    return (
+      <DefaultLayout>
+        {({ Navigator }) => renderNode(rootNode, Navigator)}
+      </DefaultLayout>
+    );
+  }
   function renderNode(node, Navigator) {
     if (node.layoutFile) {
       return renderNodeAsNavigator(node, Navigator);
@@ -41,6 +50,7 @@ export const getRenderer = function ({ rootNode, componentsMap }) {
     return null;
   }
   function renderNodeAsScreen(node, Navigator) {
+    if (!Navigator) return null;
     return (
       <Navigator.Screen
         name={node.segment}

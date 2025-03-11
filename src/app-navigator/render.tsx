@@ -1,9 +1,23 @@
 import React, { FC } from "react";
 
-import type { GetRenderer, LayoutChildren, Navigator, Route } from "./types";
+import type { GetRenderer, LayoutChildren, Route } from "./types";
+import type { Navigator } from "../types/navigator";
+import DefaultLayout from "./default-layout";
 
 export const getRenderer: GetRenderer = function ({ rootNode, componentsMap }) {
-  return () => renderNode(rootNode, null);
+  return () => renderRoot(rootNode);
+
+  function renderRoot(rootNode: Route) {
+    if (rootNode.layoutFile) return renderNode(rootNode, null);
+
+    return (
+      <DefaultLayout>
+        {({ Navigator }: { Navigator: Navigator }) =>
+          renderNode(rootNode, Navigator)
+        }
+      </DefaultLayout>
+    );
+  }
 
   function renderNode(node: Route, Navigator: Navigator | null) {
     if (node.layoutFile) {
@@ -52,7 +66,9 @@ export const getRenderer: GetRenderer = function ({ rootNode, componentsMap }) {
     return null;
   }
 
-  function renderNodeAsScreen(node: Route, Navigator: Navigator) {
+  function renderNodeAsScreen(node: Route, Navigator: Navigator | null) {
+    if (!Navigator) return null;
+
     return (
       <Navigator.Screen
         name={node.segment}

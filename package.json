@@ -1,6 +1,6 @@
 {
   "name": "react-native-app-router",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "description": "A lightweight file based router built for React Native",
   "main": "dist/src/index.js",
   "types": "index.d.ts",
@@ -30,11 +30,7 @@
   "dependencies": {
     "@parcel/watcher": "^2.5.0",
     "@react-native/typescript-config": "^0.76.5",
-    "@react-navigation/bottom-tabs": "^7.2.0",
-    "@react-navigation/drawer": "^7.1.1",
-    "@react-navigation/material-top-tabs": "^7.1.0",
     "@react-navigation/native": "^7.0.14",
-    "@react-navigation/native-stack": "^7.2.0",
     "@react-navigation/stack": "^7.1.1",
     "react": "^19.0.0",
     "react-native": "^0.76.5",
