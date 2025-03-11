@@ -4,10 +4,25 @@ export const getRenderer = function ({ rootNode, componentsMap }) {
   return () => renderRoot(rootNode);
   function renderRoot(rootNode) {
     if (rootNode.layoutFile) return renderNode(rootNode, null);
+    return renderLayout(rootNode, DefaultLayout);
+  }
+  function renderLayout(node, LayoutComponent) {
     return (
-      <DefaultLayout>
-        {({ Navigator }) => renderNode(rootNode, Navigator)}
-      </DefaultLayout>
+      <LayoutComponent>
+        {({ Navigator }) => {
+          return (
+            <>
+              {renderNodeAsScreen(node, Navigator)}
+              {/* Render child routes (which might be pages or more layouts) */}
+              {node.children.map((child) => (
+                <React.Fragment key={child.segment}>
+                  {renderNode(child, Navigator)}
+                </React.Fragment>
+              ))}
+            </>
+          );
+        }}
+      </LayoutComponent>
     );
   }
   function renderNode(node, Navigator) {
