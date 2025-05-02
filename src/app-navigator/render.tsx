@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import type { GetRenderer, LayoutChildren, Route } from "./types";
+import type { GetRenderer, LayoutChildren, LayoutProps, Route } from "./types";
 import type { Navigator } from "../types/navigator";
 import DefaultLayout from "./default-layout";
 
@@ -13,7 +13,10 @@ export const getRenderer: GetRenderer = function ({ rootNode, componentsMap }) {
     return renderLayout(rootNode, DefaultLayout);
   }
 
-  function renderLayout(node: Route, LayoutComponent: React.FC<any>) {
+  function renderLayout(
+    node: Route,
+    LayoutComponent: React.FC<LayoutProps<unknown>>,
+  ) {
     return (
       <LayoutComponent>
         {({ Navigator }: { Navigator: Navigator }) => {

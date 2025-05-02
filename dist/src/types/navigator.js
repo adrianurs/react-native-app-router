@@ -1,8 +1,8 @@
 const navigatorsGenerators = [
-  createStackNavigator,
-  createNativeStackNavigator,
-  createBottomTabNavigator,
-  createDrawerNavigator,
-  createMaterialTopTabNavigator,
+    createStackNavigator,
+    createNativeStackNavigator,
+    createBottomTabNavigator,
+    createDrawerNavigator,
+    createMaterialTopTabNavigator,
 ];
 export {};

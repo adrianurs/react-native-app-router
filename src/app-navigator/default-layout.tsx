@@ -1,10 +1,11 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import type { LayoutChildren } from "./types";
+
+import type { LayoutProps } from "./types";
 
 const Stack = createStackNavigator();
 
-function Layout({ children }: { children: LayoutChildren }) {
+function Layout({ children }: LayoutProps<unknown>) {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       {children({ Navigator: Stack })}

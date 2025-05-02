@@ -5,7 +5,7 @@
   "main": "dist/src/index.js",
   "types": "index.d.ts",
   "author": "Urs Adrian",
-  "license": "ISC",
+  "license": "MIT",
   "url": "https://github.com/adrianurs/react-native-app-router",
   "keywords": [
     "react-native",
@@ -20,7 +20,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && tsc",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "eslint --fix"
   },
   "browser": {
     "child_process": false,

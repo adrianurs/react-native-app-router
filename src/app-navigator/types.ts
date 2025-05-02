@@ -20,9 +20,13 @@ export interface LayoutChildrenParams {
   Navigator: Navigator;
 }
 
-export type LayoutChildren = (
-  layoutChildrenParams: LayoutChildrenParams,
+export type LayoutChildren<K extends unknown = unknown> = (
+  layoutChildrenParams: LayoutChildrenParams & K,
 ) => ReactNode;
+
+export type LayoutProps<K extends unknown = unknown> = {
+  children: LayoutChildren;
+} & K;
 
 type Renderer = () => ReactNode;
 

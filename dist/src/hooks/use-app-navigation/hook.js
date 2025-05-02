@@ -1,8 +1,9 @@
-import { navigate } from "./navigate";
+import { getNavigate } from "./get-navigate";
 import { useNavigation } from "@react-navigation/native";
 export function useAppNavigation() {
-  const navigation = useNavigation();
-  return {
-    navigate: navigate.bind({ navigate: navigation.navigate }),
-  };
+    const navigation = useNavigation();
+    const navigate = getNavigate(navigation);
+    return {
+        navigate
+    };
 }

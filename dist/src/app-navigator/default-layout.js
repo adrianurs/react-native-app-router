@@ -2,10 +2,8 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 const Stack = createStackNavigator();
 function Layout({ children }) {
-  return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    return (<Stack.Navigator screenOptions={{ headerShown: false }}>
       {children({ Navigator: Stack })}
-    </Stack.Navigator>
-  );
+    </Stack.Navigator>);
 }
 export default Layout;
