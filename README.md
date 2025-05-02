@@ -18,7 +18,7 @@ A lightweight and flexible routing solution for React Native applications using 
 (In progress: removal of the deps) Install the dependencies via npm or yarn:
 
 ```bash
-npm i react react-native react-native-gesture-handler react-native-safe-area-context react-native-screens @react-navigation/bottom-tabs @react-navigation/drawer @react-navigation/material-top-tabs @react-navigation/native @react-navigation/native-stack @react-navigation/stack
+npm i react react-native react-native-gesture-handler react-native-safe-area-context react-native-screens @react-navigation/native @react-navigation/stack
 ```
 
 For ios, run the following:

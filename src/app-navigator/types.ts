@@ -1,5 +1,7 @@
-import { FC, ReactNode } from "react";
 import importsMap from "../../output/imports";
+
+import type { FC, ReactNode } from "react";
+import type { Navigator } from "../types/navigator";
 
 export type ImportKey = keyof typeof importsMap;
 
@@ -14,7 +16,13 @@ export interface Route {
   route: string;
 }
 
-export type LayoutChildren = (layoutParams: any) => ReactNode;
+export interface LayoutChildrenParams {
+  Navigator: Navigator;
+}
+
+export type LayoutChildren = (
+  layoutChildrenParams: LayoutChildrenParams,
+) => ReactNode;
 
 type Renderer = () => ReactNode;
 

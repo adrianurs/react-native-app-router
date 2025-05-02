@@ -1,16 +1,14 @@
 import React from "react";
-import { View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
+import type { LayoutChildren } from "./types";
 
 const Stack = createStackNavigator();
 
-function Layout({ children }: { children: any }) {
+function Layout({ children }: { children: LayoutChildren }) {
   return (
-    <View style={{ flex: 1 }}>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {children({ Navigator: Stack })}
-      </Stack.Navigator>
-    </View>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      {children({ Navigator: Stack })}
+    </Stack.Navigator>
   );
 }
 
