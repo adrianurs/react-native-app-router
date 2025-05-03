@@ -59,9 +59,9 @@ export default Layout;
 function getComponentName(name) {
   const nameBlocks = name.split("-");
   const normalizedBlockNames = nameBlocks.map(
-    (block) => block.charAt(0) + block.slice(1),
+    (block) => block.charAt(0).toUpperCase() + block.slice(1),
   );
-  return normalizedBlockNames.join();
+  return normalizedBlockNames.join("");
 }
 
 // Make sure the directory exists
