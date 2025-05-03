@@ -30,18 +30,19 @@ export const getRenderer = function ({ rootNode, componentsMap }) {
     }
     function renderNodeAsNavigator(node, Navigator) {
         // TODO: Lazy load the layout component using require or dynamic import
-        const LayoutComponent = (componentsMap[node.layoutFile] ?? DefaultLayout);
+        const LayoutComponent = (componentsMap[node.layoutFile] ??
+            DefaultLayout);
         const Routes = () => (<LayoutComponent>
-          {({ Navigator }) => {
+        {({ Navigator }) => {
                 return (<>
-                {node.screenFile && renderNodeAsScreen(node, Navigator)}
-                {/* Render child routes (which might be pages or more layouts) */}
-                {node.children.map((child) => (<React.Fragment key={child.segment}>
-                    {renderNode(child, Navigator)}
-                  </React.Fragment>))}
-              </>);
+              {node.screenFile && renderNodeAsScreen(node, Navigator)}
+              {/* Render child routes (which might be pages or more layouts) */}
+              {node.children.map((child) => (<React.Fragment key={child.segment}>
+                  {renderNode(child, Navigator)}
+                </React.Fragment>))}
+            </>);
             }}
-        </LayoutComponent>);
+      </LayoutComponent>);
         return Navigator ? (<Navigator.Screen name={node.segment} component={Routes}/>) : (<Routes />);
     }
     function renderNodeAsScreen(node, Navigator) {
