@@ -84,7 +84,7 @@ export const getRenderer: GetRenderer = function ({ rootNode, componentsMap }) {
   }
 
   function renderNodeAsScreen(node: Route, Navigator: Navigator | null) {
-    if (!Navigator) return null;
+    if (!Navigator || !node.screenFile) return null;
 
     return (
       <Navigator.Screen

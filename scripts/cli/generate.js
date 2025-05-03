@@ -56,16 +56,21 @@ export default Layout;
   `.trim(),
 };
 
+function getComponentName(name) {
+  const nameBlocks = name.split("-");
+  const normalizedBlockNames = nameBlocks.map(
+    (block) => block.charAt(0) + block.slice(1),
+  );
+  return normalizedBlockNames.join();
+}
+
 // Make sure the directory exists
 fs.mkdirSync(targetDir, { recursive: true });
 
 // Write the file
 if (!fs.existsSync(filepath)) {
   const name = segments[segments.length - 1];
-  generateFile(
-    filepath,
-    templates[filename](name.charAt(0).toUpperCase() + name.slice(1)),
-  );
+  generateFile(filepath, templates[filename](getComponentName(name)));
 } else {
   console.warn(`⚠️ File already exists: ${filepath}`);
 }

@@ -73,10 +73,12 @@ function generateStatementsForRoute(route) {
     exports.push({ [route.layoutFile]: component });
   }
 
-  imports.push(
-    `import ${normalizedComponentName} from '../../../../src/${route.screenFile}'`,
-  );
-  exports.push({ [route.screenFile]: normalizedComponentName });
+  if (route.screenFile) {
+    imports.push(
+      `import ${normalizedComponentName} from '../../../../src/${route.screenFile}'`,
+    );
+    exports.push({ [route.screenFile]: normalizedComponentName });
+  }
 
   return { imports, exports };
 }

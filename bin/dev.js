@@ -2,7 +2,7 @@
 // const execa = require("execa");
 
 async function run(command, ...args) {
-  const execa = (await import("execa")).execa;
+  const execa = (await import("execa")).default;
   switch (command) {
     case "generate":
       execa("node", [require.resolve("../scripts/cli/generate.js"), ...args], {

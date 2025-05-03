@@ -50,7 +50,7 @@ export const getRenderer = function ({ rootNode, componentsMap }) {
         return null;
     }
     function renderNodeAsScreen(node, Navigator) {
-        if (!Navigator)
+        if (!Navigator || !node.screenFile)
             return null;
         return (<Navigator.Screen name={node.segment} component={componentsMap[node.screenFile]}/>);
     }

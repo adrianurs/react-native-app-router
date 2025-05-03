@@ -4,6 +4,6 @@ export function useAppNavigation() {
     const navigation = useNavigation();
     const navigate = getNavigate(navigation);
     return {
-        navigate
+        navigate,
     };
 }
